@@ -54,7 +54,7 @@ const SplashScreen = () => {
 		if (GetDEBUG()) { Gui.debug.show(); } else { Gui.debug.hide(); }
 	}, true);
 
-	Input.buttons[7].Setup(Gui.ShortcutsVisible ? "Keys: On" : "Keys: Off", () => {
+	Input.buttons[5].Setup(Gui.ShortcutsVisible ? "Keys: On" : "Keys: Off", () => {
 		Gui.ShortcutsVisible = !Gui.ShortcutsVisible;
 		if (isOnline()) {
 			localStorage.ShortcutsVisible = Gui.ShortcutsVisible ? 1 : 0;
@@ -62,20 +62,20 @@ const SplashScreen = () => {
 		SplashScreen();
 	}, true);
 
-	Input.buttons[8].Setup("Set bg color", () => {
+	Input.buttons[6].Setup("Set bg color", () => {
 		Gui.BgColorPicker(SplashScreen);
 	}, true);
 
-	Input.buttons[9].Setup("Set font", () => {
+	Input.buttons[7].Setup("Set font", () => {
 		Gui.FontPicker(SplashScreen);
 	}, true);
 
-	Input.buttons[10].Setup(GetRenderPictures() ? "Pics: On" : "Pics: Off", () => {
+	Input.buttons[8].Setup(GetRenderPictures() ? "Pics: On" : "Pics: Off", () => {
 		SetRenderPictures(!GetRenderPictures());
 		SplashScreen();
 	}, true);
 
-	Input.buttons[11].Setup("Clear saves", () => {
+	Input.buttons[9].Setup("Clear saves", () => {
 		Saver.Clear();
 		SplashScreen();
 	}, isOnline(), undefined, "Warning! This will clear up old saves by removing the save0-11 and savedata0-11 localstorage slots.");

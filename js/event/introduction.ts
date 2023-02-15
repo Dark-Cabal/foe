@@ -359,6 +359,9 @@ export namespace Intro {
 		Input.buttons[5].Setup("Purple", () => {
 			player.SetEyeColor(Color.purple);
 			Intro.Review();
+		}, true);		Input.buttons[5].Setup("Gold", () => {
+			player.SetEyeColor(Color.gold);
+			Intro.Review();
 		}, true);
 	}
 

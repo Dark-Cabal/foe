@@ -17,16 +17,16 @@ import { StatusList } from "./statuslist";
 import { Text } from "./text";
 
 const textArea = {
-	x: 270,
+	x: 285,
 	y: 65,
-	w: 740,
+	w: 800,
 	h: 530,
 	inset: 4,
 	pad: {x: 20, y: 10},
 };
 
 const tooltipArea = {
-	x: 1075,
+	x: 1125,
 	y: 195,
 	w: 190,
 	h: 390,
@@ -78,7 +78,7 @@ export class Gui {
 	static get ShortcutsVisible() { return ShortcutsVisible; }
 	static set ShortcutsVisible(visible) { ShortcutsVisible = visible; }
 
-	static get barWidth() { return 145; }
+	static get barWidth() { return 125; }
 
 	static get Callstack() { return callstack; }
 	static set Callstack(cs) { callstack = cs; }
@@ -114,7 +114,7 @@ export class Gui {
 		enemy = Gui.canvas.set();
 		enemyObj = [];
 		for (let i = 0; i < 4; ++i) {
-			Gui.SetupPortrait(1020, 75 + 120 * i, enemy, enemyObj, false, i);
+			Gui.SetupPortrait(1120, 75 + 120 * i, enemy, enemyObj, false, i);
 		}
 
 		// Cavalcade
@@ -176,11 +176,11 @@ export class Gui {
 		Input.Init(Gui);
 
 		// Set bg
-		BgColor = isOnline() && localStorage.bgcolor ? localStorage.bgcolor : "rgba(255, 255, 255, 0.2)";
+		BgColor = isOnline() && localStorage.bgcolor ? localStorage.bgcolor : "rgba(201, 134, 58, 0.7)";
 		document.getElementById("mainTextArea").style.backgroundColor = BgColor;
 		FontFamily = isOnline() && localStorage.fontFamily ? localStorage.fontFamily : "Georgia, sans-serif, \"Arial\", \"Helvetica\"";
 		document.getElementById("mainTextArea").style.fontFamily = FontFamily;
-		FontSize = isOnline() && localStorage.fontSize ? localStorage.fontSize : "large";
+		FontSize = isOnline() && localStorage.fontSize ? localStorage.fontSize : "x-large";
 		document.getElementById("mainTextArea").style.fontSize = FontSize;
 		Gui.ShortcutsVisible = isOnline() ? parseInt(localStorage.ShortcutsVisible, 10) === 1 : false;
 
@@ -423,7 +423,7 @@ export class Gui {
 		});
 		options.push({ nameStr : "Size",
 			func() {
-				const size = prompt("Please enter desired font size (css: font-size). For example: small, medium, large.", FontSize || "large");
+				const size = prompt("Please enter desired font size (css: font-size). For example: small, medium, large, x-large.", FontSize || "large");
 				if (size !== undefined && size !== "") {
 					FontSize = size;
 					if (isOnline()) {
@@ -736,7 +736,7 @@ export class Gui {
 
 	public static RenderTime() {
 		const coinStr = GAME().party.coin;
-		Gui.PrintGlow(overlay, coin, 250, 690, coinStr, fonts.Kimberley, 20, "end", {opacity: 1});
+		Gui.PrintGlow(overlay, coin, 150, 690, coinStr, fonts.Kimberley, 20, "end", {opacity: 1});
 
 		const dateStr = WorldTime().DateString();
 		Gui.PrintGlow(overlay, date, 1245, 15, dateStr, fonts.Kimberley, 20, "end", {opacity: 1});

@@ -1,6 +1,6 @@
 // Universal constants
 const frametime = 0.050; // Used for time updates
-export const windowWidth  = 1280;
+export const windowWidth  = 1400;
 export const windowHeight = 720;
 
 export const SAVE_VERSION = 29;

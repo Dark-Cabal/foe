@@ -143,17 +143,17 @@ export class Input {
 
 	// Init functions for the button sets
 	public static InitButtons() {
-		const offset = {x: 270, y: 600};
+		const offset = {x: 285, y: 600};
 
 		let button: Button;
-		for (let y = 0; y < 3; y++) {
-			for (let x = 0; x < 4; x++) {
+		for (let y = 0; y < 3; y++) { // rows == y
+			for (let x = 0; x < 5; x++) { // columns == x
 				button = new Button(Gui, {x : offset.x + 162 * x, y : offset.y + 40 * y, w : 155, h : 35}, "Button" + (x + y * 5), undefined, true, Images.imgButtonEnabled, Images.imgButtonDisabled);
 				buttons.push(button);
 				buttonSet.push(button.set);
 			}
 
-			button = new Button(Gui, {x : offset.x + 162 * 4, y : offset.y + 40 * y, w : 75, h : 35}, "Nav" + y, undefined, true, Images.imgNavButtonEnabled, Images.imgNavButtonDisabled);
+			button = new Button(Gui, {x : offset.x + 162 * 5, y : offset.y + 40 * y, w : 75, h : 35}, "Nav" + y, undefined, true, Images.imgNavButtonEnabled, Images.imgNavButtonDisabled);
 			navButtons.push(button);
 			navButtonSet.push(button.set);
 		}
@@ -162,13 +162,13 @@ export class Input {
 			exploreButtons.push(button);
 			exploreButtonSet.push(button.set);
 		}
-		button = new Button(Gui, {x : 150, y : 590, w : 50, h : 50}, "", undefined, true, Images.imgWaitEnabled, Images.imgWaitDisabled);
+		button = new Button(Gui, {x : 120, y : 590, w : 50, h : 50}, "", undefined, true, Images.imgWaitEnabled, Images.imgWaitDisabled);
 		exploreButtons.push(button);
 		exploreButtonSet.push(button.set);
-		button = new Button(Gui, {x : 150, y : 590, w : 50, h : 50}, "", undefined, true, Images.imgSleepEnabled, Images.imgSleepDisabled);
+		button = new Button(Gui, {x : 120, y : 590, w : 50, h : 50}, "", undefined, true, Images.imgSleepEnabled, Images.imgSleepDisabled);
 		exploreButtons.push(button);
 		exploreButtonSet.push(button.set);
-		button = new Button(Gui, {x : 210, y : 590, w : 50, h : 50}, "", undefined, true, Images.imgSearchEnabled, Images.imgSearchDisabled);
+		button = new Button(Gui, {x : 180, y : 590, w : 50, h : 50}, "", undefined, true, Images.imgSearchEnabled, Images.imgSearchDisabled);
 		exploreButtons.push(button);
 		exploreButtonSet.push(button.set);
 	}
