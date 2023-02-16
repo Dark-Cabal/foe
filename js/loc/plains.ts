@@ -268,6 +268,13 @@ PlainsLoc.Crossroads.links.push(new Link(
 	},
 ));
 PlainsLoc.Crossroads.links.push(new Link(
+	"A deep cave", true, true,
+	undefined,
+	() => {
+		MoveToLocation(WORLD().loc.ScholarCave.Entrance, {hour: 2});
+	},
+));
+PlainsLoc.Crossroads.links.push(new Link(
 	"Burrows", () => GAME().burrows.flags.Access !== BurrowsFlags.AccessFlags.Unknown, true,
 	() => {
 		if (GAME().burrows.flags.Access !== BurrowsFlags.AccessFlags.Unknown) {

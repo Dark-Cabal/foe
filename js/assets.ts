@@ -36,6 +36,7 @@ Images.layla        = require("../assets/img/layla.png");
 Images.layla_f      = require("../assets/img/layla_f.png");
 Images.uru1         = require("../assets/img/uru1.png");
 Images.cassidy      = require("../assets/img/avatar_cass.png");
+Images.scholar      = require("../assets/img/scholar.png");
 
 Images.lagon_r      = require("../assets/img/lagon_r.png");
 Images.lagon_b      = require("../assets/img/lagon_b.png");

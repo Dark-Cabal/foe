@@ -64,6 +64,8 @@ export interface ILocations {
     DragonDen: ILocDragonDen;
     TreeCity: ILocation;
 
+	ScholarCave: ILocSC;
+
     DarkAspect: ILocDarkAspect;
     LightAspect: ILocLightAspect;
 }
@@ -144,6 +146,11 @@ export interface ILocLake {
 
 export interface ILocDragonDen {
 	Entry: ILocation;
+}
+
+export interface ILocSC {
+	Entrance: ILocation;
+	ScholarStudy: ILocation;
 }
 
 export interface ILocDarkAspect {

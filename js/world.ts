@@ -18,6 +18,7 @@ import { LakeLoc } from "./loc/lake";
 import { InitNomads } from "./loc/nomads";
 import { InitOutlaws, OutlawsLoc } from "./loc/outlaws";
 import { PlainsLoc } from "./loc/plains";
+import { ScholarCaveLoc } from "./loc/scholarcave";
 import { InitRigard } from "./loc/rigard/rigard";
 import { RigardLoc } from "./loc/rigard/rigard-scenes";
 import { TreeCityLoc } from "./loc/treecity/treecity";
@@ -40,6 +41,8 @@ export function InitWorld() {
 
 		DragonDen : DragonDenLoc,
 		TreeCity : TreeCityLoc,
+
+		ScholarCave : ScholarCaveLoc,
 
 		DarkAspect,
 		LightAspect,

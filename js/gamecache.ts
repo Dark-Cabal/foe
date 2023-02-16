@@ -55,6 +55,7 @@ import { Lei } from "./event/royals/lei";
 import { LeiFlags } from "./event/royals/lei-flags";
 import { Twins } from "./event/royals/twins";
 import { TwinsFlags } from "./event/royals/twins-flags";
+import {Scholar} from "./event/scholar";
 import { Sylistraxia } from "./event/sylistraxia";
 import { Terry } from "./event/terry";
 import { TerryFlags } from "./event/terry-flags";
@@ -81,6 +82,7 @@ import { Party } from "./party";
 import { IParse, Text } from "./text";
 import { TF } from "./tf";
 import { Season, Time } from "./time";
+
 
 const InitCache = () => {
 	// Reset exploration
@@ -175,6 +177,8 @@ const InitCache = () => {
 	GAME().sylistraxia = new Sylistraxia();
 	GAME().ches        = new Ches(); // TODO
 
+	GAME().scholar  = new Scholar(gameCache.scholar);
+
 	InitEntityStorage();
 
 	// Stuff that also has update methods
@@ -238,6 +242,7 @@ const InitCache = () => {
 	EntityStorage().push(GAME().sylistraxia);
 
 	EntityStorage().push(GAME().ches);
+	EntityStorage().push(GAME().scholar);
 	EntityStorage().push(GAME().lucille);
 	EntityStorage().push(GAME().belinda);
 	EntityStorage().push(GAME().bastet);
@@ -565,6 +570,7 @@ const GameToCache = () => {
 	gameCache.ophelia  = GAME().ophelia.ToStorage();
 	gameCache.vena     = GAME().vena.ToStorage();
 	gameCache.roa      = GAME().roa.ToStorage();
+	gameCache.scholar  = GAME().scholar.ToStorage();
 
 	gameCache.gwendy   = GAME().gwendy.ToStorage();
 	gameCache.adrian   = GAME().adrian.ToStorage();
