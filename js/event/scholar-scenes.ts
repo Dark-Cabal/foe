@@ -7,6 +7,7 @@ import {ScholarFlags} from "./scholar-flags";
 import {BurrowsFlags} from "../loc/burrows-flags";
 import {IChoice} from "../link";
 import {Gui} from "../gui";
+import {Images} from "../assets";
 
 
 export namespace ScholarScenes {
@@ -24,7 +25,9 @@ export namespace ScholarScenes {
         parse = player.ParserTags(parse);
         parse = Text.ParserPlural(parse, player.NumCocks() > 1);
 
+        //TODO: this doesn't show up, needs to get fixed
         Text.Clear();
+        Text.Say(Images.scholar);
         Text.Out("As you make your way towards the table when he does not seem threatening, just surprised, you’re able to get a better look at the elf. He’s a dainty little thing, as elves are wont to be; petitely built, but feminine, and clad in mages robes with a compelling choker around his throat. His long, peach-colored hair is plaited into two braids framing his pretty face with the deepest brown eyes behind delicate glasses.");
         Text.NL();
         Text.Add("Drawing closer, he clears his throat and looks at you with something akin to polite interest.");
@@ -57,6 +60,7 @@ export namespace ScholarScenes {
             {nameStr: "Talk",
                 func() {
                     Text.Clear();
+                    Text.Say(Images.scholar);
                     if (scholar.Relation() < 0) {
                         Text.Add("<i>“Can I help you with something?”</i> he responds shortly. He does not seem to like you butting into his reading time.");
                     } else if (scholar.Relation() < 50) {
@@ -74,6 +78,7 @@ export namespace ScholarScenes {
                 nameStr : "Back out",
                 func : () => {
                     Text.Clear();
+                    Text.Say(Images.scholar);
                     Text.Out(`You shake your head, apologize and make to leave the cave.
 
 					“Thought as much…” the scholar says, nonetheless managing to look disappointed. “If you change your mind… well, you know where to find me.” He gives you a smile as you leave his homestead.`);
